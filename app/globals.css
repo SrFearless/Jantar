@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  z-index: 1;
+}
+
+.menu {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  height: 70vh;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.menuHeader {
+  background: #8B4513;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 2px solid #A0522D;
+}
+
+.menuContent {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.page {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+.menuFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background: rgba(40, 40, 40, 0.9);
+  border-top: 1px solid #555;
+}
+
+button {
+  background: #8B4513;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #A0522D;
+}
+
+button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.questionContainer {
+  display: none;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.questionContainer.active {
+  display: block;
+  animation: slideUp 0.5s ease;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.option {
+  background: #333;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.option:hover {
+  background: #444;
+}
+
+.option.selected {
+  background: #8B4513;
+}
+
+.profileImg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  display: block;
+  border: 3px solid #8B4513;
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: #f0c674;
+}
+
+p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+  margin: 0 5px;
+}
+
+.dot.active {
+  background: #8B4513;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 20px;
+  background: #2a5a2a;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: none;
+}
+
+.successMessage.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.completionMessage {
+  text-align: center;
+  padding: 40px;
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
