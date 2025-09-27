@@ -1,11 +1,9 @@
-// components/RestaurantScene/RestaurantScene.tsx
-import React from 'react';
-
-export const RestaurantScene: React.FC = () => {
+export function RestaurantScene() {
   return (
     <>
-      <div className="scene"></div>
-      <div className="overlay"></div>
+      <div className="scene">
+        <div className="overlay"></div>
+      </div>
     </>
   );
-};
+}

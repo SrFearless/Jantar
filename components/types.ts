@@ -10,6 +10,7 @@ export interface IQuestion {
     text: string;
     options: string[];
     type: 'single' | 'multiple';
+    gifs: string[]; // Agora é um array para múltiplos GIFs
 }
 
 export interface IUserResponse {

@@ -45,8 +45,23 @@ export function Question({ question, onAnswer, onNext }: QuestionProps) {
 
   return (
     <div className="questionContainer active">
-      <h2>Pergunta do encontro</h2>
-      <p>{question.text}</p>
+      <h2>🗡️ Questionário Real</h2>
+      
+      {/* Área de GIFs - 4 GIFs em grid 2x2 */}
+      <div className="question-gifs">
+        {question.gifs && question.gifs.map((gif, index) => (
+          <img 
+            key={index} 
+            src={gif} 
+            alt={`Ilustração ${index + 1}`} 
+            className="question-gif" 
+          />
+        ))}
+      </div>
+      
+      <p style={{textAlign: 'center', fontSize: '1.1rem', marginBottom: '20px'}}>
+        {question.text}
+      </p>
       
       <div className="options">
         {question.options.map(option => (
@@ -60,16 +75,20 @@ export function Question({ question, onAnswer, onNext }: QuestionProps) {
         ))}
       </div>
       
-      <button 
-        onClick={handleSubmit} 
-        disabled={selectedOptions.length === 0}
-      >
-        Enviar resposta
-      </button>
+      <div style={{textAlign: 'center'}}>
+        <button 
+          onClick={handleSubmit} 
+          disabled={selectedOptions.length === 0}
+          style={{fontSize: '1.1rem', padding: '12px 25px'}}
+        >
+          🏹 Enviar Resposta
+        </button>
+      </div>
       
       {showSuccess && (
         <div className="successMessage active">
-          <p>Resposta enviada com sucesso! Obrigada por participar.</p>
+          <p>✨ Resposta enviada para os arquivos reais! ✨</p>
+          <p>O mensageiro já partiu a cavalo...</p>
         </div>
       )}
     </div>

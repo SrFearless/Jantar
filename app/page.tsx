@@ -11,7 +11,6 @@ const EmailService = {
   async sendResponse(response: IUserResponse): Promise<boolean> {
     try {
       console.log('Enviando resposta por email:', response);
-      // Simular delay de envio
       await new Promise(resolve => setTimeout(resolve, 1000));
       console.log('Email enviado com sucesso!');
       return true;
@@ -29,63 +28,120 @@ export default function DatingSimulator() {
   const menuPages: IPage[] = [
     {
       id: 'page1',
-      title: 'Conheça a Maria',
+      title: 'Conheça a Lady Maria',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
       content: `
-        <p>Olá! É um prazer conhecê-lo. Sou a Maria, tenho 28 anos e sou arquiteta. 
-        Adoro viajar, ler e cozinhar nas horas vagas.</p>
-        <p>Vamos nos conhecer melhor? Use as setas para navegar pelo meu cardápio pessoal.</p>
+        <div style="text-align: center;">
+          <p>🛡️ Saudações, nobre visitante! Sou a Lady Maria, da Casa dos Ventos.</p>
+          <p>Tenho 28 verões e sou arquiteta dos grandes salões e fortalezas.</p>
+          <p>Nos meus momentos de folga, aprecio jornadas a reinos distantes,</p>
+          <p>a leitura de antigos pergaminhos e a arte da culinária medieval.</p>
+          <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Castelo medieval" class="medieval-gif" />
+          <p style="margin-top: 15px; font-style: italic;">"Que nossa conversa seja tão rica quanto os tesouros de um dragão!"</p>
+        </div>
       `
     },
     {
       id: 'page2',
-      title: 'Meus Sonhos',
+      title: 'Meus Grandes Sonhos',
       content: `
-        <p>Tenho grandes aspirações para o futuro:</p>
+        <p>Tenho aspirações que transcendem este reino:</p>
         <ul>
-          <li>Viajar para pelo menos 30 países diferentes</li>
-          <li>Projetar um edifício icônico que se torne referência</li>
-          <li>Aprender a tocar piano com fluência</li>
-          <li>Escrever um livro sobre arquitetura sustentável</li>
-          <li>Ter uma casa com jardim e muitos animais</li>
+          <li>
+            <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Viagem medieval" class="list-item-gif" />
+            Viajar para 30 reinos diferentes além-mar
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Catedral" class="list-item-gif" />
+            Projetar uma catedral que toque os céus
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Alaúde" class="list-item-gif" />
+            Dominar a arte do alaúde real
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Livro" class="list-item-gif" />
+            Escrever um tratado sobre arquitetura ancestral
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Solar" class="list-item-gif" />
+            Ter um solar com jardim de ervas mágicas
+          </li>
         </ul>
       `
     },
     {
       id: 'page3',
-      title: 'Meus Hobbies',
+      title: 'Meus Passatempos Reais',
       content: `
-        <p>Nos meus momentos livres, gosto de:</p>
+        <p>Quando não estou desenhando fortalezas, dedico-me a:</p>
         <ul>
-          <li>Fotografar paisagens urbanas e naturais</li>
-          <li>Experimentar novas receitas na cozinha</li>
-          <li>Ler ficção científica e biografias</li>
-          <li>Fazer trilhas e acampar na natureza</li>
-          <li>Assistir a filmes clássicos do cinema</li>
+          <li>
+            <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Manuscritos" class="list-item-gif" />
+            Iluminar manuscritos antigos
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Banquete" class="list-item-gif" />
+            Preparar banquetes para a corte
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Estrelas" class="list-item-gif" />
+            Estudar as estrelas e seus mistérios
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Floresta" class="list-item-gif" />
+            Explorar florestas encantadas
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Artefatos" class="list-item-gif" />
+            Colecionar artefatos de reinos distantes
+          </li>
         </ul>
       `
     },
     {
       id: 'page4',
-      title: 'Meus Gostos',
+      title: 'Meus Tesouros Preferidos',
       content: `
-        <p>Algumas coisas que eu adoro:</p>
+        <p>Estas são as joias que enriquecem meu espírito:</p>
         <ul>
-          <li>Café pela manhã e vinho à noite</li>
-          <li>Música indie e jazz</li>
-          <li>Culinária italiana e japonesa</li>
-          <li>Filmes de Wes Anderson</li>
-          <li>Livros de Haruki Murakami</li>
-          <li>Estação do ano: outono</li>
+          <li>
+            <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Hidromel" class="list-item-gif" />
+            Hidromel ao amanhecer e vinho tinto ao crepúsculo
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Música" class="list-item-gif" />
+            Canções de bardos e melodias de harpa
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Comida" class="list-item-gif" />
+            Manjares da Toscana e do Oriente
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Filmes" class="list-item-gif" />
+            Os contos épicos das Cruzadas
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Livros" class="list-item-gif" />
+            Os pergaminhos de alquimia árabe
+          </li>
+          <li>
+            <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Outono" class="list-item-gif" />
+            A estação do outono, quando as folhas douram
+          </li>
         </ul>
       `
     },
     {
       id: 'page5',
-      title: 'Agora é a sua vez!',
+      title: 'Agora é a Sua Vez, Nobre Aventureiro!',
       content: `
-        <p>Obrigada por conhecer um pouco mais sobre mim. Agora gostaria de saber mais sobre você!</p>
-        <p>Feche este cardápio para responder algumas perguntas.</p>
+        <div style="text-align: center;">
+          <p>🦅 Obrigada por conhecer os segredos da minha corte.</p>
+          <p>Agora, gostaria de saber mais sobre o seu reino interior!</p>
+          <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Aventura medieval" class="medieval-gif" />
+          <p style="margin-top: 15px; font-weight: bold;">Feche este pergaminho para responder aos meus questionários reais.</p>
+        </div>
       `
     }
   ];
@@ -93,21 +149,39 @@ export default function DatingSimulator() {
   const questions: IQuestion[] = [
     {
       id: 'q1',
-      text: "Que tipo de animais você gosta?",
-      options: ["Cachorros", "Gatos", "Aves", "Répteis", "Todos os animais"],
-      type: 'single'
+      text: "Que criaturas míticas capturam seu coração?",
+      options: ["Dragões majestosos", "Grifos alados", "Unicórnios puros", "Fênixes renascentes", "Todas as criaturas mágicas"],
+      type: 'single',
+      gifs: [
+        'https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif',
+        'https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif',
+        'https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif',
+        'https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif'
+      ]
     },
     {
       id: 'q2', 
-      text: "Qual seu tipo de música favorita?",
-      options: ["Rock", "Pop", "Jazz/Blues", "Eletrônica", "Clássica", "MPB"],
-      type: 'single'
+      text: "Qual melodia real encanta seus ouvidos?",
+      options: ["Cantos gregorianos", "Lauras de bardos", "Sons de alaúde", "Trovões de guerra", "Sinfonias clássicas", "Cantigas populares"],
+      type: 'single',
+      gifs: [
+        'https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif',
+        'https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif',
+        'https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif',
+        'https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif'
+      ]
     },
     {
       id: 'q3',
-      text: "Qual seu destino de viagem dos sonhos?",
-      options: ["Praia tropical", "Montanhas", "Cidade grande", "Campo/roça", "Deserto", "Neve"],
-      type: 'single'
+      text: "Qual destino de peregrinação você mais almeja?",
+      options: ["Ilhas tropicais distantes", "Montanhas dos dragões", "Cidades muradas", "Vales campestres", "Desertos proibidos", "Terras geladas do norte"],
+      type: 'single',
+      gifs: [
+        'https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif',
+        'https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif',
+        'https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif',
+        'https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif'
+      ]
     }
   ];
 
@@ -116,7 +190,6 @@ export default function DatingSimulator() {
   };
 
   const handleAnswer = async (response: IUserResponse) => {
-    // Usar o serviço de email para enviar a resposta
     await EmailService.sendResponse(response);
   };
 
@@ -132,22 +205,36 @@ export default function DatingSimulator() {
     <main>
       <RestaurantScene />
       <div className="container">
-        {currentStage === 'menu' && (
-          <Menu pages={menuPages} onClose={handleMenuClose} />
-        )}
-        
-        {currentStage === 'questions' && currentQuestionIndex < questions.length && (
-          <Question
-            question={questions[currentQuestionIndex]}
-            onAnswer={handleAnswer}
-            onNext={handleNextQuestion}
-          />
-        )}
-        
+        {/* Questionário no canto superior direito */}
+        <div className="questionnaire-section">
+          {currentStage === 'questions' && currentQuestionIndex < questions.length && (
+            <Question
+              question={questions[currentQuestionIndex]}
+              onAnswer={handleAnswer}
+              onNext={handleNextQuestion}
+            />
+          )}
+        </div>
+
+        {/* Cardápio na parte inferior */}
+        <div className="menu-section">
+          {currentStage === 'menu' && (
+            <Menu pages={menuPages} onClose={handleMenuClose} />
+          )}
+        </div>
+
+        {/* Mensagem de conclusão centralizada */}
         {currentStage === 'completed' && (
           <div className="completionMessage">
-            <h2>Obrigada pelo encontro!</h2>
-            <p>Foi um prazer conhecê-lo melhor. Espero que tenhamos mais conversas como esta!</p>
+            <h2>🎉 O Encontro Real Chegou ao Fim! 🎉</h2>
+            <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Festa medieval" className="medieval-gif" />
+            <p>Foi uma honra conhecer seu coração de aventureiro!</p>
+            <p style={{marginTop: '15px', fontStyle: 'italic'}}>
+              "Que nossas jornadas se cruzem novamente sob as estrelas do destino."
+            </p>
+            <p style={{marginTop: '20px', fontSize: '0.9rem', color: '#8b4513'}}>
+              - Lady Maria da Casa dos Ventos
+            </p>
           </div>
         )}
       </div>
