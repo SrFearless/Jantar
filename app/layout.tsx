@@ -6,6 +6,8 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Encontro Especial',
+  icons: {
+    icon: "/icons/Marca.png",},
   description: 'Simulador de encontro com cardápio interativo',
 };
 

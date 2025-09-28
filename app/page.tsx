@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { RestaurantScene } from '../components/RestaurantScene/RestaurantScene';
 import { Menu } from '../components/Menu/Menu';
 import { Question } from '../components/Question/Question';
+import { PasswordGate } from '../components/PasswordGate/PasswordGate';
 import { IPage, IQuestion, IUserResponse } from '../components/types';
 
 // Serviço de email simulado
@@ -24,18 +25,31 @@ const EmailService = {
 export default function DatingSimulator() {
   const [currentStage, setCurrentStage] = useState<'menu' | 'questions' | 'completed'>('menu');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [backgroundScene, setBackgroundScene] = useState<'tavern' | 'castle' | 'throne'>('tavern');
+  const [isUnlocked, setIsUnlocked] = useState(false);
+
+  // Alterar plano de fundo baseado no estágio atual
+  useEffect(() => {
+    if (currentStage === 'menu') {
+      setBackgroundScene('tavern');
+    } else if (currentStage === 'questions') {
+      setBackgroundScene('castle');
+    } else if (currentStage === 'completed') {
+      setBackgroundScene('throne');
+    }
+  }, [currentStage]);
 
   const menuPages: IPage[] = [
     {
       id: 'page1',
-      title: 'Conheça a Lady Maria',
+      title: 'Conheça o Tiago da Linhagem Machado',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
       content: `
         <div style="text-align: center;">
-          <p>🛡️ Saudações, nobre visitante! Sou a Lady Maria, da Casa dos Ventos.</p>
-          <p>Tenho 28 verões e sou arquiteta dos grandes salões e fortalezas.</p>
-          <p>Nos meus momentos de folga, aprecio jornadas a reinos distantes,</p>
-          <p>a leitura de antigos pergaminhos e a arte da culinária medieval.</p>
+          <p>🛡️ Saudações, Me chamo Tiago de Freitas Machado.</p>
+          <p>Tenho 24 anos e estou me especializando na área de programação.</p>
+          <p>Nos meus momentos de folga, aprecio jogar, me exercitar (Academia), assistir (Anime)</p>
+          <p>fazer leitura e a arte da culinária.</p>
           <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Castelo medieval" class="medieval-gif" />
           <p style="margin-top: 15px; font-style: italic;">"Que nossa conversa seja tão rica quanto os tesouros de um dragão!"</p>
         </div>
@@ -201,9 +215,14 @@ export default function DatingSimulator() {
     }
   };
 
+  // Se não estiver desbloqueado, mostrar tela de senha
+  if (!isUnlocked) {
+    return <PasswordGate onUnlock={() => setIsUnlocked(true)} />;
+  }
+
   return (
     <main>
-      <RestaurantScene />
+      <RestaurantScene scene={backgroundScene} />
       <div className="container">
         {/* Questionário no canto superior direito */}
         <div className="questionnaire-section">
