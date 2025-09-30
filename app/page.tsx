@@ -27,6 +27,19 @@ export default function DatingSimulator() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [backgroundScene, setBackgroundScene] = useState<'tavern' | 'castle' | 'throne'>('tavern');
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar se é mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Alterar plano de fundo baseado no estágio atual
   useEffect(() => {
@@ -47,11 +60,12 @@ export default function DatingSimulator() {
       content: `
         <div style="text-align: center;">
           <p>🛡️ Saudações, Me chamo Tiago de Freitas Machado.</p>
-          <p>Tenho 24 anos e estou me especializando na área de programação.</p>
-          <p>Nos meus momentos de folga, aprecio jogar, me exercitar (Academia), assistir (Anime)</p>
-          <p>fazer leitura e a arte da culinária.</p>
+          <p>- Tenho 24 anos e estou me especializando na área de programação.</p>
+          <p>- Nos meus momentos de folga, aprecio jogar, me exercitar (Academia),</p>
+          <p>- assistir (Anime), fazer leitura e a arte da culinária.</p>
+          ${isMobile ? '<p>Nos meus momentos de folga, aprecio jornadas a reinos distantes e a leitura de antigos pergaminhos.</p>' : '<p>Nos meus momentos de folga, aprecio jornadas a reinos distantes, a leitura de antigos pergaminhos e a arte da culinária medieval.</p>'}
           <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Castelo medieval" class="medieval-gif" />
-          <p style="margin-top: 15px; font-style: italic;">"Que nossa conversa seja tão rica quanto os tesouros de um dragão!"</p>
+          <p style="margin-top: 15px; font-style: italic;">"Que nossa conversa seja gratificante!"</p>
         </div>
       `
     },
@@ -59,102 +73,86 @@ export default function DatingSimulator() {
       id: 'page2',
       title: 'Meus Grandes Sonhos',
       content: `
-        <p>Tenho aspirações que transcendem este reino:</p>
+        <p>Tenho sonhos que transcendem a imaginação:</p>
         <ul>
           <li>
             <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Viagem medieval" class="list-item-gif" />
-            Viajar para 30 reinos diferentes além-mar
+            Me tornar um Desenvolvedor fullstack Senior
           </li>
           <li>
             <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Catedral" class="list-item-gif" />
-            Projetar uma catedral que toque os céus
+            Um futuro Ancião
           </li>
           <li>
             <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Alaúde" class="list-item-gif" />
-            Dominar a arte do alaúde real
+            Dominar a arte do Violino
           </li>
           <li>
             <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Livro" class="list-item-gif" />
-            Escrever um tratado sobre arquitetura ancestral
-          </li>
-          <li>
-            <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Solar" class="list-item-gif" />
-            Ter um solar com jardim de ervas mágicas
+            Apreciar a vista da minha moradia na Suiça
           </li>
         </ul>
       `
     },
     {
       id: 'page3',
-      title: 'Meus Passatempos Reais',
+      title: 'Meus Passatempos',
       content: `
-        <p>Quando não estou desenhando fortalezas, dedico-me a:</p>
+        <p>Quando não estou emprestando minhas forças para as empresas, dedico-me a:</p>
         <ul>
           <li>
             <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Manuscritos" class="list-item-gif" />
-            Iluminar manuscritos antigos
+            Me distrair com Jogos emocionantes
           </li>
           <li>
             <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Banquete" class="list-item-gif" />
-            Preparar banquetes para a corte
+            Assistir Séries, Animes e Filmes
           </li>
           <li>
             <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Estrelas" class="list-item-gif" />
-            Estudar as estrelas e seus mistérios
+            Desenhar Pixelarts revigorantes
           </li>
           <li>
             <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Floresta" class="list-item-gif" />
-            Explorar florestas encantadas
-          </li>
-          <li>
-            <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Artefatos" class="list-item-gif" />
-            Colecionar artefatos de reinos distantes
+            Explorar minha criatividade para criar programas
           </li>
         </ul>
       `
     },
     {
       id: 'page4',
-      title: 'Meus Tesouros Preferidos',
+      title: 'Alguns dos meus Gostos',
       content: `
-        <p>Estas são as joias que enriquecem meu espírito:</p>
+        <p>Estes são os combustiveis que aquecem o meu coração:</p>
         <ul>
           <li>
             <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Hidromel" class="list-item-gif" />
-            Hidromel ao amanhecer e vinho tinto ao crepúsculo
+            A estação do inverno, onde o conforto chega ao ápice
           </li>
           <li>
             <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="Música" class="list-item-gif" />
-            Canções de bardos e melodias de harpa
+            Musicas Sertanejas, Gaúchas, Phonk, Trilhas Sonoras e por ai vai
           </li>
           <li>
             <img src="https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif" alt="Comida" class="list-item-gif" />
-            Manjares da Toscana e do Oriente
-          </li>
-          <li>
-            <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Filmes" class="list-item-gif" />
-            Os contos épicos das Cruzadas
+            Prefiro Salgado ao invés de Doce
           </li>
           <li>
             <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Livros" class="list-item-gif" />
-            Os pergaminhos de alquimia árabe
-          </li>
-          <li>
-            <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" alt="Outono" class="list-item-gif" />
-            A estação do outono, quando as folhas douram
+            Contos que só se acha em Livros
           </li>
         </ul>
       `
     },
     {
       id: 'page5',
-      title: 'Agora é a Sua Vez, Nobre Aventureiro!',
+      title: 'Agora é a Sua Vez!',
       content: `
         <div style="text-align: center;">
-          <p>🦅 Obrigada por conhecer os segredos da minha corte.</p>
-          <p>Agora, gostaria de saber mais sobre o seu reino interior!</p>
+          <p>🦅 Obrigada por me conhecer um pouco.</p>
+          <p>Agora, gostaria de saber mais sobre a sua pessoa!</p>
           <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Aventura medieval" class="medieval-gif" />
-          <p style="margin-top: 15px; font-weight: bold;">Feche este pergaminho para responder aos meus questionários reais.</p>
+          <p style="margin-top: 15px; font-weight: bold;">Feche este cardápio para responder aos meus questionários.</p>
         </div>
       `
     }
@@ -163,20 +161,19 @@ export default function DatingSimulator() {
   const questions: IQuestion[] = [
     {
       id: 'q1',
-      text: "Que criaturas míticas capturam seu coração?",
-      options: ["Dragões majestosos", "Grifos alados", "Unicórnios puros", "Fênixes renascentes", "Todas as criaturas mágicas"],
+      text: "Que criaturinha tem o seu coração?",
+      options: ["Gatos", "Cachorros", "Passaros"],
       type: 'single',
       gifs: [
         'https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif',
         'https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif',
-        'https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif',
         'https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif'
       ]
     },
     {
       id: 'q2', 
-      text: "Qual melodia real encanta seus ouvidos?",
-      options: ["Cantos gregorianos", "Lauras de bardos", "Sons de alaúde", "Trovões de guerra", "Sinfonias clássicas", "Cantigas populares"],
+      text: "Qual melodia encanta seus ouvidos?",
+      options: ["Eletronica", "Antiga", "Sertaneja", "K-Pop", "Pop"],
       type: 'single',
       gifs: [
         'https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif',
@@ -187,8 +184,8 @@ export default function DatingSimulator() {
     },
     {
       id: 'q3',
-      text: "Qual destino de peregrinação você mais almeja?",
-      options: ["Ilhas tropicais distantes", "Montanhas dos dragões", "Cidades muradas", "Vales campestres", "Desertos proibidos", "Terras geladas do norte"],
+      text: "Qual estação você prefere?",
+      options: ["Verão", "Inverno", "Outono", "Primavera"],
       type: 'single',
       gifs: [
         'https://media.giphy.com/media/26xBwdIuRJiAIqHwA/giphy.gif',
@@ -245,14 +242,14 @@ export default function DatingSimulator() {
         {/* Mensagem de conclusão centralizada */}
         {currentStage === 'completed' && (
           <div className="completionMessage">
-            <h2>🎉 O Encontro Real Chegou ao Fim! 🎉</h2>
+            <h2>🎉 Encontro Finalizado! 🎉</h2>
             <img src="https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif" alt="Festa medieval" className="medieval-gif" />
-            <p>Foi uma honra conhecer seu coração de aventureiro!</p>
-            <p style={{marginTop: '15px', fontStyle: 'italic'}}>
-              "Que nossas jornadas se cruzem novamente sob as estrelas do destino."
+            <p>Foi uma honra conhecer seu coração!</p>
+            <p style={{marginTop: '10px', fontStyle: 'italic'}}>
+              "Que nossas jornadas se cruzem novamente."
             </p>
-            <p style={{marginTop: '20px', fontSize: '0.9rem', color: '#8b4513'}}>
-              - Lady Maria da Casa dos Ventos
+            <p style={{marginTop: '15px', fontSize: '0.8rem', color: '#8b4513'}}>
+              - Tiago de Freitas Machado
             </p>
           </div>
         )}
