@@ -78,7 +78,7 @@ body {
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23f5e8c8" rx="10" ry="10"/><rect x="10" y="10" width="580" height="380" fill="%23f5e8c8" stroke="%23d4af37" stroke-width="2" rx="8" ry="8"/></svg>');
   background-size: cover;
   border-radius: 12px;
-  height: 50vh;
+  height: 60vh;
   box-shadow: 
     0 15px 30px rgba(0, 0, 0, 0.6),
     inset 0 0 40px rgba(210, 180, 140, 0.3),
@@ -126,13 +126,76 @@ body {
   line-height: 1.5;
 }
 
+/* CORREÇÃO CRÍTICA: Estilos para alinhamento do conteúdo */
 .page {
   display: none;
+  height: 100%;
   animation: scrollReveal 1.2s ease-out;
 }
 
 .page.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pageContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centralização vertical e horizontal - CORRIGIDO */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  gap: 15px;
+}
+
+.bottom-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.space-between-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Estilos específicos para parágrafos dentro do conteúdo */
+.pageContent p {
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.pageContent .centered-text {
+  text-align: center;
+  width: 100%;
+}
+
+.pageContent .bottom-text {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
 }
 
 .menuFooter {
@@ -320,7 +383,7 @@ h2 {
 p {
   margin-bottom: 10px;
   line-height: 1.5;
-  text-align: justify;
+  text-align: center;
   animation: textReveal 0.8s ease-out;
 }
 
@@ -449,7 +512,7 @@ li::before {
     url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="350" height="250" viewBox="0 0 350 250"><rect width="350" height="250" fill="%23f5e8c8" rx="15" ry="15"/><rect x="12" y="12" width="326" height="226" fill="%23f5e8c8" stroke="%23d4af37" stroke-width="3" rx="12" ry="12"/></svg>');
   background-size: cover;
   padding: 25px;
-  border-radius: 15px;
+  border-radius: 50px;
   border: 3px solid #d4af37;
   text-align: center;
   color: #5d4037;
@@ -683,7 +746,7 @@ li::before {
   border: 1px solid #d7ccc8;
 }
 
-/* Media Queries para Mobile - Escala ainda menor */
+/* Media Queries para Mobile */
 @media (max-width: 480px) {
   .container {
     padding: 8px;
@@ -695,7 +758,7 @@ li::before {
   }
 
   .menu {
-    height: 45vh;
+    height: 50vh;
     border-radius: 10px;
   }
 
@@ -816,10 +879,10 @@ li::before {
   }
 }
 
-/* Media Queries para Telas Muito Pequenas (iPhone SE etc) */
+/* Ajustes para telas muito pequenas */
 @media (max-width: 375px) and (max-height: 670px) {
   .menu {
-    height: 40vh;
+    height: 45vh;
   }
 
   .questionContainer {
@@ -859,7 +922,7 @@ li::before {
 /* Ajustes para orientação paisagem em mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .menu {
-    height: 70vh;
+    height: 75vh;
   }
 
   .questionnaire-section {

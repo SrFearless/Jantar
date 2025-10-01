@@ -23,7 +23,7 @@ export function PasswordGate({ onUnlock }: PasswordGateProps) {
   return (
     <div className="passwordGate">
       <div className="passwordContainer">
-        <h2>🎭 Convite para o Jantar 🎭</h2>
+        <h2>Aceita um Jantar?</h2>
         <p>Para prosseguir, insira a senha:</p>
         <form onSubmit={handleSubmit}>
           <input

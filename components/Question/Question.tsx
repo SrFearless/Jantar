@@ -87,7 +87,7 @@ export function Question({ question, onAnswer, onNext }: QuestionProps) {
       
       {showSuccess && (
         <div className="successMessage active">
-          <p>✨ Resposta enviada para os arquivos reais! ✨</p>
+          <p>✨ Resposta enviada para os arquivos! ✨</p>
           <p>O mensageiro já partiu a cavalo...</p>
         </div>
       )}
