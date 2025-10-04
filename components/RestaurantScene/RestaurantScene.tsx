@@ -6,13 +6,13 @@ export function RestaurantScene({ scene }: RestaurantSceneProps) {
   const getBackgroundImage = () => {
     switch (scene) {
       case 'tavern':
-        return 'url(https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif)';
+        return 'url(/images/Taverna.gif)';
       case 'castle':
-        return 'url(https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif)';
+        return 'url(/images/Taverna.gif)';
       case 'throne':
-        return 'url(https://media.giphy.com/media/26AHPxxnSw1L9T1rW/giphy.gif)';
+        return 'url(/images/Taverna.gif)';
       default:
-        return 'url(https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif)';
+        return 'url(/images/Taverna.gif)';
     }
   };
 

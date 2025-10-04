@@ -72,11 +72,9 @@ body {
   z-index: 5;
 }
 
-/* Cardápio estilo pergaminho com animação de desenrolar */
+/* Cardápio estilo pergaminho SEM linhas internas */
 .menu {
-  background: 
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400"><rect width="600" height="400" fill="%23f5e8c8" rx="10" ry="10"/><rect x="10" y="10" width="580" height="380" fill="%23f5e8c8" stroke="%23d4af37" stroke-width="2" rx="8" ry="8"/></svg>');
-  background-size: cover;
+  background: #f5e8c8; /* Cor sólida em vez de SVG com linhas */
   border-radius: 12px;
   height: 60vh;
   box-shadow: 
@@ -92,17 +90,7 @@ body {
   animation: parchmentUnfold 1.5s ease-out;
 }
 
-.menu::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M20,20 Q40,10 60,20 T100,20" stroke="%23d4af37" stroke-width="0.5" fill="none" opacity="0.1"/></svg>');
-  pointer-events: none;
-}
-
+/* REMOVIDO: .menu::before que podia causar linhas */
 .menuHeader {
   background: linear-gradient(45deg, #8b4513 0%, #a0522d 100%);
   color: #f5e8c8;
@@ -126,7 +114,7 @@ body {
   line-height: 1.5;
 }
 
-/* CORREÇÃO CRÍTICA: Estilos para alinhamento do conteúdo */
+/* CORREÇÃO: Estilos para alinhamento do conteúdo */
 .page {
   display: none;
   height: 100%;
@@ -208,12 +196,10 @@ body {
   animation: footerReveal 1s ease-out 1s both;
 }
 
-/* Container de perguntas estilo medieval - menor e no canto */
+/* Container de perguntas estilo medieval SEM linhas internas */
 .questionContainer {
   display: none;
-  background: 
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="350" height="450" viewBox="0 0 350 450"><rect width="350" height="450" fill="%23f5e8c8" rx="12" ry="12"/><rect x="8" y="8" width="334" height="434" fill="%23f5e8c8" stroke="%23d4af37" stroke-width="2" rx="10" ry="10"/></svg>');
-  background-size: cover;
+  background: #f5e8c8; /* Cor sólida em vez de SVG com linhas */
   border-radius: 12px;
   width: 100%;
   max-height: 450px;
@@ -435,13 +421,11 @@ li::before {
   transform: scale(1.1);
 }
 
-/* Mensagem de conclusão melhorada */
+/* Mensagem de conclusão melhorada SEM linhas internas */
 .completionMessage {
   text-align: center;
   padding: 25px;
-  background: 
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250" viewBox="0 0 400 250"><rect width="400" height="250" fill="%23f5e8c8" rx="12" ry="12"/><rect x="12" y="12" width="376" height="226" fill="%23f5e8c8" stroke="%23d4af37" stroke-width="3" rx="10" ry="10"/></svg>');
-  background-size: cover;
+  background: #f5e8c8; /* Cor sólida em vez de SVG */
   border-radius: 50px;
   max-width: 380px;
   border: 3px solid #d4af37;
@@ -488,7 +472,7 @@ li::before {
   animation: victoryScroll 0.8s ease-out;
 }
 
-/* Tela de senha */
+/* Tela de senha SEM linhas internas */
 .passwordGate {
   position: fixed;
   top: 0;
@@ -497,7 +481,7 @@ li::before {
   height: 100%;
   background: 
     radial-gradient(circle at center, rgba(40, 20, 5, 0.9) 0%, rgba(20, 10, 2, 0.95) 100%),
-    url('https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif');
+    url('/images/Abertura.gif');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -508,11 +492,9 @@ li::before {
 }
 
 .passwordContainer {
-  background: 
-    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="350" height="250" viewBox="0 0 350 250"><rect width="350" height="250" fill="%23f5e8c8" rx="15" ry="15"/><rect x="12" y="12" width="326" height="226" fill="%23f5e8c8" stroke="%23d4af37" stroke-width="3" rx="12" ry="12"/></svg>');
-  background-size: cover;
+  background: #f5e8c8; /* Cor sólida em vez de SVG */
   padding: 25px;
-  border-radius: 50px;
+  border-radius: 15px;
   border: 3px solid #d4af37;
   text-align: center;
   color: #5d4037;

@@ -6,6 +6,8 @@ import { Menu } from '../components/Menu/Menu';
 import { Question } from '../components/Question/Question';
 import { PasswordGate } from '../components/PasswordGate/PasswordGate';
 import { IPage, IQuestion, IUserResponse } from '../components/types';
+import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 // Serviço de email simulado
 const EmailService = {
@@ -65,7 +67,7 @@ export default function DatingSimulator() {
             <p>Nos meus momentos de folga, aprecio jogar, me exercitar (Academia),</p>
             <p>assistir (Anime), fazer leitura e a arte da culinária.</p>
           </div>
-          <img src="https://media.giphy.com/media/l0Exk8EHvG3U8nWak/giphy.gif" alt="Castelo medieval" class="medieval-gif" />
+          <img src="/images/Eu.png" alt="Castelo medieval" class="medieval-gif" />
           <p style="font-style: italic;">"Que nossa conversa seja gratificante!"</p>
         </div>
       `
@@ -91,7 +93,7 @@ export default function DatingSimulator() {
             </li>
             <li>
               <img src="/images/FAZENDA.gif" alt="Livro" class="list-item-gif" />
-              Uma casa tranquila em um lugar de silencio ao redor, preferencia na Suiça
+              Uma casa tranquila em um lugar de silencio, preferencia na Suiça
             </li>
           </ul>
         </div>
@@ -197,10 +199,10 @@ export default function DatingSimulator() {
       options: ["Verão", "Inverno", "Outono", "Primavera"],
       type: 'single',
       gifs: [
-        '/images/OUTONO.gif',
+        '/images/VERAO.gif',
         '/images/INVERNO.gif',
-        '/images/PRIMAVERA.gif',
-        '/images/VERAO.gif'
+        '/images/OUTONO.gif',
+        '/images/PRIMAVERA.gif'
       ]
     }
   ];
@@ -257,6 +259,14 @@ export default function DatingSimulator() {
             <p style={{marginTop: '10px', fontStyle: 'italic'}}>
               "Que nossas jornadas se cruzem novamente."
             </p>
+            <Link 
+            href="https://portfolio-pessoal-mu-virid.vercel.app" 
+            className={cn(
+              "font-pixel text-purple-500 hover:text-purple-200 px-3 py-1 rounded-md transition-colors bg-amber-900/30 border-l-4 border-amber-500",
+            )}
+          >
+            Ir ao Portifólio
+          </Link>
             <p style={{marginTop: '15px', fontSize: '0.8rem', color: '#8b4513'}}>
               - Tiago de Freitas Machado
             </p>
