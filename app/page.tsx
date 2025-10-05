@@ -58,7 +58,7 @@ export default function DatingSimulator() {
     {
       id: 'page1',
       title: 'Conheça o Tiago da Linhagem Machado',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80',
+      image: '/images/eu1.jpg',
       content: `
         <div class="center-content">
           <div>
@@ -80,11 +80,11 @@ export default function DatingSimulator() {
           <p class="centered-text">Tenho sonhos que transcendem a imaginação:</p>
           <ul>
             <li>
-              <img src="/images/FAZENDA.gif" alt="Viagem medieval" class="list-item-gif" />
+              <img src="/images/progra.gif" alt="Viagem medieval" class="list-item-gif" />
               Me tornar um Desenvolvedor fullstack Senior
             </li>
             <li>
-              <img src="/images/FAZENDA.gif" alt="Catedral" class="list-item-gif" />
+              <img src="/images/anciao.jpg" alt="Catedral" class="list-item-gif" />
               Um futuro Ancião
             </li>
             <li>
