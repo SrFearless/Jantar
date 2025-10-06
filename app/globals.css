@@ -729,6 +729,7 @@ li::before {
 }
 
 /* Media Queries para Mobile */
+/* Media Queries para Mobile */
 @media (max-width: 480px) {
   .container {
     padding: 8px;
@@ -753,6 +754,33 @@ li::before {
     padding: 12px;
     font-size: 0.8rem;
   }
+
+  /* === CORREÇÃO DO TÍTULO FICANDO POR CIMA DOS PARÁGRAFOS === */
+  .menuContent h2 {
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    min-height: auto;
+  }
+
+  /* Garantir que o conteúdo da página tenha espaçamento adequado */
+  .page.active {
+    gap: 8px;
+  }
+
+  /* Ajuste adicional para o primeiro parágrafo após o título */
+  .pageContent p:first-of-type {
+    margin-top: 0;
+  }
+  .pageContent {
+    padding-top: 5px;
+  }
+  
+  .menuContent h2 {
+    flex-shrink: 0; /* Impede que o título diminua */
+  }
+  /* === FIM DA CORREÇÃO === */
 
   .menuFooter {
     padding: 10px;
@@ -844,10 +872,6 @@ li::before {
 
   h1 {
     font-size: 1.4rem;
-  }
-
-  h2 {
-    font-size: 1.1rem;
   }
 
   .progress {
