@@ -41,22 +41,22 @@ export function Menu({ pages, onClose }: MenuProps) {
         <h1>Cardápio Especial</h1>
       </div>
       
-      <div className="menuContent">
-        <div className={`page ${!isAnimating ? 'active' : ''}`}>
-          {currentPage.image && (
-            <img 
-              src={currentPage.image} 
-              alt={currentPage.title} 
-              className="profileImg" 
-            />
-          )}
-          <h2>{currentPage.title}</h2>
-          <div 
-            className="pageContent" 
-            dangerouslySetInnerHTML={{ __html: currentPage.content }} 
-          />
-        </div>
-      </div>
+      <div className="menuContent" style={{ minHeight: '200px' }}>
+  <div className={`page ${!isAnimating ? 'active' : ''}`}>
+    {currentPage.image && (
+      <img 
+        src={currentPage.image} 
+        alt={currentPage.title} 
+        className="profileImg" 
+      />
+    )}
+    <h2>{currentPage.title}</h2>
+    <div 
+      className="pageContent" 
+      dangerouslySetInnerHTML={{ __html: currentPage.content }} 
+    />
+  </div>
+</div>
       
       <div className="menuFooter">
         <button onClick={handlePrevious} disabled={currentPageIndex === 0 || isAnimating}>

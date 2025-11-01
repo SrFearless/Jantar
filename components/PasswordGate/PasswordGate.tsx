@@ -20,6 +20,10 @@ export function PasswordGate({ onUnlock }: PasswordGateProps) {
     }
   };
 
+  const handlePortfolioClick = () => {
+    window.location.href = 'https://portfolio-pessoal-mu-virid.vercel.app';
+  };
+
   return (
     <div className="passwordGate">
       <div className="passwordContainer">
@@ -33,9 +37,18 @@ export function PasswordGate({ onUnlock }: PasswordGateProps) {
             placeholder="Digite a senha..."
             className="passwordInput"
           />
-          <button type="submit" className="passwordButton">
-            🗝️ Entrar no Restaurante
-          </button>
+          <div className="buttonContainer">
+            <button type="submit" className="passwordButton">
+              🗝️ Entrar no Restaurante
+            </button>
+            <button 
+              type="button" 
+              className="passwordButton1"
+              onClick={handlePortfolioClick}
+            >
+              📂 Voltar ao Portfólio
+            </button>
+          </div>
         </form>
         {error && <p className="errorMessage">{error}</p>}
         <p style={{marginTop: '15px', fontSize: '0.8rem', color: '#8b4513'}}>
