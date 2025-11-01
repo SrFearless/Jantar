@@ -1006,4 +1006,9 @@ li::before {
     margin-bottom: 10px;
     font-size: 1rem;
   }
+  .menuFooter button {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
 }
