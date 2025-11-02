@@ -981,8 +981,9 @@ li::before {
 /* Ajustes para orientação paisagem em mobile - CORRIGIDO */
 @media (max-height: 500px) and (orientation: landscape) {
   .menu {
-    height: 85vh; /* Aumentei para landscape */
-    min-height: 3000px;
+    top: -25px;
+    height: 60vh; /* Ajuste proporcional */
+    min-height: 380px;
   }
 
   .questionnaire-section {
