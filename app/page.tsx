@@ -34,13 +34,22 @@ export default function DatingSimulator() {
   // Detectar se é mobile
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
+      const isMobile = window.innerWidth <= 768;
+      setIsMobile(isMobile);
+      
+      // Ajuste adicional para telas muito pequenas
+      if (window.innerHeight <= 600) {
+        document.body.style.overflow = 'hidden';
+      }
     };
-
+  
     checkMobile();
     window.addEventListener('resize', checkMobile);
     
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      document.body.style.overflow = '';
+    };
   }, []);
 
   // Alterar plano de fundo baseado no estágio atual

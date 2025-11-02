@@ -1013,4 +1013,185 @@ li::before {
     visibility: visible !important;
     display: block !important;
   }
+
+/* Media Queries para Mobile CORRIGIDAS */
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .menu-section {
+    width: 98%;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+
+  .menu {
+    height: 55vh; /* Reduzi a altura */
+    min-height: 350px; /* Altura mínima reduzida */
+    max-height: 75vh; /* Altura máxima para não sair da tela */
+    border-radius: 10px;
+    margin-bottom: 0;
+  }
+
+  .menuHeader {
+    padding: 8px;
+    font-size: 1rem;
+  }
+
+  .menuContent {
+    padding: 10px;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    flex: 1;
+    max-height: calc(100% - 120px); /* Limita a altura do conteúdo */
+  }
+
+  /* CORREÇÃO DO TÍTULO E BOTÕES */
+  .menuContent h2 {
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    font-size: 1rem;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+
+  .page.active {
+    gap: 8px;
+    padding: 0;
+  }
+
+  .pageContent {
+    padding-top: 0;
+    gap: 6px;
+  }
+
+  .menuFooter {
+    padding: 8px;
+    flex-shrink: 0;
+    min-height: 45px;
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(45deg, #8b4513 0%, #a0522d 100%);
+  }
+
+  /* Botões sempre visíveis */
+  .menuFooter button {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    min-width: 70px;
+    height: 35px;
+  }
+
+  /* Questionário menor para não competir com o menu */
+  .questionnaire-section {
+    width: 95%;
+    right: 8px;
+    top: 8px;
+    max-width: 300px;
+    max-height: 40vh;
+  }
+
+  .questionContainer {
+    padding: 10px;
+    max-height: 300px;
+    font-size: 0.8rem;
+  }
+
+  /* Resto do código mantido... */
+  .question-gifs {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .question-gif {
+    height: 60px;
+  }
+
+  .option {
+    padding: 6px;
+    font-size: 0.75rem;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .medieval-gif {
+    width: 120px;
+    height: 90px;
+  }
+
+  .profileImg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .completionMessage {
+    padding: 15px;
+    max-width: 280px;
+    font-size: 0.8rem;
+  }
+
+  .list-item-gif {
+    width: 50px;
+    height: 40px;
+  }
+
+  li {
+    min-height: 50px;
+    font-size: 0.75rem;
+    padding: 4px 0 4px 12px;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 375px) and (max-height: 670px) {
+  .menu {
+    height: 50vh; /* Mais reduzido ainda */
+    min-height: 320px;
+    max-height: 65vh;
+  }
+
+  .menuContent {
+    padding: 8px;
+    max-height: calc(100% - 110px);
+  }
+
+  .menuFooter {
+    padding: 6px;
+    min-height: 40px;
+  }
+
+  .menuFooter button {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+    min-width: 65px;
+    height: 32px;
+  }
+
+  .menuContent h2 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+}
+
+/* Ajustes para orientação paisagem */
+@media (max-height: 500px) and (orientation: landscape) {
+  .menu {
+    height: 80vh;
+    min-height: 250px;
+    max-height: 85vh;
+  }
+
+  .menuContent {
+    max-height: calc(100% - 100px);
+  }
+}
 }

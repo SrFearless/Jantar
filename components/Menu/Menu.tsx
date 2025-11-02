@@ -41,16 +41,17 @@ export function Menu({ pages, onClose }: MenuProps) {
         <h1>Cardápio Especial</h1>
       </div>
       
-      <div className="menuContent" style={{ minHeight: '200px' }}>
+      <div className="menuContent" style={{ maxHeight: 'calc(100% - 120px)' }}>
   <div className={`page ${!isAnimating ? 'active' : ''}`}>
     {currentPage.image && (
       <img 
         src={currentPage.image} 
         alt={currentPage.title} 
         className="profileImg" 
+        style={{ maxWidth: '80px', maxHeight: '80px' }} // Reduzindo imagem no mobile
       />
     )}
-    <h2>{currentPage.title}</h2>
+    <h2 style={{ fontSize: 'clamp(0.9rem, 4vw, 1.1rem)' }}>{currentPage.title}</h2>
     <div 
       className="pageContent" 
       dangerouslySetInnerHTML={{ __html: currentPage.content }} 
