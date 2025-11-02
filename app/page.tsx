@@ -66,8 +66,8 @@ export default function DatingSimulator() {
   const menuPages: IPage[] = [
     {
       id: 'page1',
-      title: 'Conheça o Tiago da Linhagem Machado',
-      image: '/images/eu1.jpg',
+      title: '',
+      image: '',
       content: `
         <div class="center-content">
           <div>
@@ -76,7 +76,7 @@ export default function DatingSimulator() {
             <p>Nos meus momentos de folga, aprecio jogar, me exercitar (Academia),</p>
             <p>assistir (Anime), fazer leitura e a arte da culinária.</p>
           </div>
-          <img src="/images/Eu.png" alt="Castelo medieval" class="medieval-gif" />
+          <img src="/images/eu1.jpg" alt="Castelo medieval" class="medieval-gif" />
           <p style="font-style: italic;">"Que nossa conversa seja gratificante!"</p>
         </div>
       `
