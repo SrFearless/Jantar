@@ -928,6 +928,7 @@ li::before {
 /* Ajustes para telas muito pequenas - CORRIGIDO */
 @media (max-width: 375px) and (max-height: 670px) {
   .menu {
+    top: -25px;
     height: 60vh; /* Ajuste proporcional */
     min-height: 380px;
   }
@@ -981,7 +982,7 @@ li::before {
 @media (max-height: 500px) and (orientation: landscape) {
   .menu {
     height: 85vh; /* Aumentei para landscape */
-    min-height: 300px;
+    min-height: 3000px;
   }
 
   .questionnaire-section {
