@@ -398,7 +398,7 @@ li {
 }
 
 li::before {
-  content: '⚔️';
+  content: '';
   position: absolute;
   left: 0;
   font-size: 0.9rem;

@@ -71,7 +71,7 @@ export default function DatingSimulator() {
       content: `
         <div class="center-content">
           <div>
-            <p>🛡️ Saudações</p>
+            <p>------------------</p>
             <p>Tenho 24 anos e estou me especializando na área de programação.</p>
           </div>
           <p style="font-style: italic;">"Que nossa conversa seja gratificante!"</p>
